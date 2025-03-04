@@ -4,7 +4,6 @@ import { SigninMethods } from '../../common/enum/auth.enum';
 
 export type UserDocument = User & Document;
 
-@Schema({ timestamps: true })
 export class ServiceProvider {
     @Prop({ type: String, enum: SigninMethods, required: true })
     inp: SigninMethods;  // Integrated Provider (Google, Facebook, etc.)

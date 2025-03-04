@@ -21,7 +21,6 @@ export class GoogleStrategy {
   // Verify Google ID token
   async verifyGoogleIdToken(idToken: string): Promise<TokenPayload | undefined> {
 
-    console.log('this.authconfig: ', this.authconfig);
     try {
       // Initialize Google OAuth client
       const decodedToken = await this.client.verifyIdToken({

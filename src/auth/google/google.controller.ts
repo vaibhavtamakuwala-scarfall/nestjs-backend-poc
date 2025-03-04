@@ -7,7 +7,7 @@ export class GoogleController {
   constructor(private readonly googleService: GoogleService) { }
 
   @Post("verify")
-  signinWithGoogle(@Body() @Body() { idToken }: SigninGoogleDto) {
+  signinWithGoogle(@Body() { idToken }: SigninGoogleDto) {
     return this.googleService.authenticationWithGoogle(idToken);
   }
 }

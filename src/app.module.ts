@@ -6,12 +6,14 @@ import { ConfigModule } from "@nestjs/config";
 import { UserModule } from './user/user.module';
 import serverConfig from './config/server.config';
 import authConfig from './config/auth.config';
+import databaseConfig from './config/database.config';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
     isGlobal: true,
-    load: [serverConfig, authConfig],
-  }), AuthModule, UserModule],
+    load: [serverConfig, authConfig, databaseConfig],
+  }), DatabaseModule, AuthModule, UserModule],
   controllers: [AppController],
   providers: [AppService],
 })

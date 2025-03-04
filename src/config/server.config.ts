@@ -8,6 +8,6 @@ export interface ServerConfig {
 }
 
 export default registerAs(ServerConfigName, () => ({
-    nodeEnv: process.env.NODE_ENV || "dev",
+    nodeEnv: process.env.NODE_ENV || "development",
     port: parseInt(process.env.PORT || '3000')
 }));
